@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+TOP=$(dirname "$0")
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 <path-to-code>"
+  exit 1
+fi
+
+
+if [ $1 = "build" ]; then
+  docker compose -f ${TOP}/docker-compose.yml build
+  exit 0
+fi
+
+if [ $1 = "shell" ]; then
+  docker compose -f ${TOP}/docker-compose.yml run -it gh-code sh
+fi
+
+
