@@ -1,0 +1,8 @@
+services:
+  gh-code:
+    build:
+      context: ${LOCAL_WORKSPACE_FOLDER:-.}
+      dockerfile: Dockerfile
+    command: sleep infinity
+    volumes:
+      - ${PWD}:/workdir
