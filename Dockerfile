@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y \
    openssh-server \
    tmux \
    neovim \
+   cmake \
    && apt-get -y autoremove \
    && rm -rf /var/lib/apt/lists/*
 COPY entrypoint.sh /usr/bin/entrypoint.sh
