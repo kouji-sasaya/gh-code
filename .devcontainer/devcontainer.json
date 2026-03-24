@@ -1,8 +1,0 @@
-{
-  "name": "My Temp Container",
-  "dockerComposeFile": "../docker-compose.yml",
-  "service": "gh-code",
-  "workspaceFolder": "/workdir",
-  "shutdownAction": "stopCompose"
-}
-
