@@ -4,7 +4,11 @@ set -e
 TOP=$(dirname "$0")
 
 if [ -z "$1" ]; then
-  echo "Usage: $0 <path-to-code>"
+  echo "Usage:"
+  echo "$0 build    # Build for docker image" 
+  echo "$0 shell    # Login docker" 
+  echo "$0 .        # Open Visual Studio Code with Dev Container"
+
   exit 1
 fi
 
@@ -15,7 +19,18 @@ if [ $1 = "build" ]; then
 fi
 
 if [ $1 = "shell" ]; then
-  docker compose -f ${TOP}/docker-compose.yml run --rm -it --service-ports gh-code bash
+  docker compose -f ${TOP}/docker-compose.yml run --name gh-code -it --rm  gh-code
+  exit 0
 fi
+
+if [ $1 = "." ]; then
+  # コンテナ名gh-code をHEX(67682d636f6465)に変換
+  HEX=$(printf '%s' 'gh-code' | xxd -p | tr -d '\n')
+  code --folder-uri "vscode-remote://attached-container+${HEX}/workdir/"
+fi
+
+echo "Unknown command: $1"
+echo "Usage: $0 build|shell"
+exit 1
 
 
