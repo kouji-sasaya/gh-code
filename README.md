@@ -1,6 +1,19 @@
 # gh-code
 
-## gh-code のインストール方法
+
+Visual Stuio Code の remote development extensionのDev Containerの機能を集約したコマンドです。
+
+gh code build で、docker イメージをビルドして、ローカルマシンに作ります。
+
+gh code shell で、docker コンテナを起動します。
+
+vimを使いたい人もいるので、Visuial Studio Codeの利用を必須としたくないため、デーモンのコンテナにはしませんでした。
+
+gh code . で開くと、Visual Codeが立ち上がり、docker コンテナに接続しましす。
+
+コンテナ内で、GitHub copilot も使えることを確認済です。
+
+## gh code のインストール方法
 
 このリポジトリを取得して、実行権限を付与します。
 
