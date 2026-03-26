@@ -99,6 +99,22 @@ $ gh code .
 
 つまり、`gh code shell` の中で `gh code .` を実行するのではなく、`gh- ode shell` の外で `gh code .` を実行して、起動中のコンテナへ VS Code からアタッチします。
 
+
+## Visual Studio Code内での操作
+
+terminalを開くと、docker コンテナ内に居ます。
+
+cmake を実行し、make allでビルドして、helloを実行できれば成功です。
+
+```bash
+$ mkdir -p /workdir/build
+$ cd /workdir/build
+$ cmake ..
+$ make all
+$ ./hello
+Hello, world!
+```
+
 ## 補足
 
 - `gh code shell` は `docker compose run --rm` を使うため、終了するとコンテナは削除されます。
