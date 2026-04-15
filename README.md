@@ -54,11 +54,15 @@ b1426245ec91   gh-rust   "/entrypoint.sh"   5 minutes ago   Up 5 minutes        
 
 ```
 
+gh-rust というコンテナに、Vusual Studio CodeのDevContainerで接続します。
+
 ```sh
-$ 
-$ gh code <container name>
+$ gh code gh-rust
 ```
 
+## スクリーンショット
+
+![code.jpg](code.jpg)
 
 
 
