@@ -1,9 +1,0 @@
-services:
-  gh-code:
-    container_name: gh-code
-    image: gh-code
-    build:
-      context: ${LOCAL_WORKSPACE_FOLDER:-.}
-      dockerfile: Dockerfile
-    volumes:
-      - ${PWD}:/workdir
