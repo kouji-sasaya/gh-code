@@ -37,27 +37,25 @@ $ mkdir my-code && cd my-code
 $ gh rust shell
 ```
 
-gh rust コンテナ内に入った後、
-```sh
-$ cargo init
-$ cargo build
-$ cargo run -q
-Hello, world!
-```
-
-
 ```sh
 $ docker ps -a
 CONTAINER ID   IMAGE     COMMAND            CREATED         STATUS         PORTS     NAMES
 b1426245ec91   gh-rust   "/entrypoint.sh"   5 minutes ago   Up 5 minutes             gh-rust
 ```
 
-```
-
 gh-rust というコンテナに、Vusual Studio CodeのDevContainerで接続します。
 
 ```sh
 $ gh code gh-rust
+```
+
+Visual Studio Code のターミナルで、gh rust コンテナ内に入った後に、rust コンパイルして、実行します。
+
+```sh
+$ cargo init
+$ cargo build
+$ cargo run -q
+Hello, world!
 ```
 
 ## スクリーンショット
